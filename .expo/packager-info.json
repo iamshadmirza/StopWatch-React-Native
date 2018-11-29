@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 3620,
+  "expoServerNgrokUrl": "https://45-fn3.anonymous.stopwatch.exp.direct",
+  "packagerNgrokUrl": "https://packager.45-fn3.anonymous.stopwatch.exp.direct",
+  "ngrokPid": 5176
 }
