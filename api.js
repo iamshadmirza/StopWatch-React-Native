@@ -6,15 +6,15 @@ const { manifest } = Expo.Constants;
 const api = manifest.packagerOpts.dev
   ? manifest.debuggerHost.split(`:`).shift().concat(`:3000`)
   : `api.example.com`;
-const api1 = 'http://192.168.1.103/';
-const url = `http://${api1}/events`;
+
+const url = `http://${api}/events`;
 
 export function getEvents() {
   return fetch(url)
     .then(response => response.json())
     .then(events => events.map(e => ({ ...e, date: new Date(e.date) })))
     .catch(function (error) {
-      console.log('There has been a problem with your fetch operation: ' + error.message);
+      console.log('There has been a problem with your get operation: ' + error.message);
       // ADD THIS THROW error
       throw error;
     });
@@ -34,7 +34,7 @@ export function saveEvent({ title, date }) {
   })
     .then(res => res.json())
     .catch(function (error) {
-      console.log('There has been a problem with your fetch operation: ' + error.message);
+      console.log('There has been a problem with your save operation: ' + error.message);
       // ADD THIS THROW error
       throw error;
     });
@@ -48,7 +48,7 @@ export function formatDate(dateString) {
     return dateString;
   }
 
-  return parsed.format('D MMM YYYY');
+  return parsed.format('DD MMM YYYY');
 }
 
 export function formatDateTime(dateString) {
@@ -58,7 +58,7 @@ export function formatDateTime(dateString) {
     return dateString;
   }
 
-  return parsed.format('H A on D MMM YYYY');
+  return parsed.format('H A on DD MMM YYYY');
 }
 
 export function getCountdownParts(eventDate) {

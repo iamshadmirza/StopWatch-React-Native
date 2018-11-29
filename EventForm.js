@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
 class EventForm extends Component {
   state = {
     title: '',
-    date: '',
+    date: null,
   };
 
   handleAddPress = () => {
